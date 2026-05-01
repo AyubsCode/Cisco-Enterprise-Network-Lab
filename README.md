@@ -1,6 +1,10 @@
-![Network Logo](logo_2.png)
-## Project Overview
+# Cisco Enterprise Network Lab
 
+<p align="center">
+  <img src="assets/logo.jpg" alt="Network Logo" >
+</p>
+
+## Project Overview
 This project simulates a corporate network environment for a company with 
 four departments — Finance, HR, IT and Guest. The network was designed and 
 built in two phases, starting with a core foundation and expanding to include 
