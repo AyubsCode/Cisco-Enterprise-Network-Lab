@@ -5,7 +5,7 @@
 </p>
 
 ## Project Overview
-This project simulates a corporate network environment for a company with 
+This project simulates a corporate network environment of a company with 
 four departments — Finance, HR, IT and Guest. The network was designed and 
 built in two phases, starting with a core foundation and expanding to include 
 dedicated infrastructure servers and enhanced security controls.
@@ -154,7 +154,7 @@ GigabitEthernet ports were assigned to IT and Finance due to bandwidth-intensive
 
 
 
-## What I Would Do Differently
+## What I Would've Done Differently
 
 - Implement a Layer 3 switch to handle inter-VLAN routing via SVIs, removing the Router-on-a-Stick bottleneck
 - Add a redundant router and switch with Hot Standby Router Protocol(HSRP) for high availability
@@ -165,7 +165,7 @@ GigabitEthernet ports were assigned to IT and Finance due to bandwidth-intensive
 - Use a fully featured DHCP server supporting granular lease time configuration per pool, the Guest pool would use a 4 hour lease to prevent address exhaustion
 
 
-## What I Learned
+## What I've Learned
 
 This project taught me the importance of planning a network design before configuration. Building the network in two phases demonstrated how a core foundation can be progressively hardened and expanded to meet enterprise requirements. I've developed a deeper understanding of how security controls work together at different layers — VLANs for segmentation, ACLs for traffic filtering, port security for physical access control, and SSH for secure management. I also gained practical experience identifying the gap between lab environments and production networks, particularly around dedicated server roles, redundancy and enterprise grade hardware.
 
