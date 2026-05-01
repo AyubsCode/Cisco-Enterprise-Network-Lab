@@ -1,3 +1,4 @@
+![Network Logo](logo_2.png)
 ## Project Overview
 
 This project simulates a corporate network environment for a company with 
@@ -28,17 +29,20 @@ throughout the project.
 cisco-enterprise-network-lab/
 ├── README.md
 ├── topology/
-│   ├── phase1-network.pkt
-│   ├── phase1-diagram.png
-│   ├── phase2-network.pkt
-│   └── phase2-diagram.png
+    ├── phase_1_corporate_network.pkt
+    ├── phase_2_corporate_network.pkt
+    ├── phase_1_diagram.jpg       ← draw.io clean diagram
+    ├── phase_1_topology.jpg    ← actual PT screenshot
+    ├── phase_2-network.jpg
+    ├── phase_2_diagram.jpg       ← draw.io clean diagram
+    └── phase_2_topology.jpg    ← actual PT screenshot
 ├── documentation/
-│   └── network-documentation.pdf
+   └── network-documentation.pdf
 └── configs/
-├── phase1-router-config.txt
-├── phase1-switch-config.txt
-├── phase2-router-config.txt
-└── phase2-switch-config.txt
+    ├── phase1-router-config.txt
+    ├── phase1-switch-config.txt
+    ├── phase2-router-config.txt
+    └── phase2-switch-config.txt
 ```
 
 ## Network Topology
@@ -106,8 +110,8 @@ cisco-enterprise-network-lab/
 | Device | Hostname | IP Address | Purpose |
 |---|---|---|---|
 | DHCP Server | SRV-DHCP-01 | 192.168.30.2 | IP address assignment |
-| NTP Server | SRV-NTP-01 | 192.168.30.3 | Time synchronisation |
-| Syslog Server | SRV-LOG-01 | 192.168.30.4 | Centralised logging |
+| NTP Server | SRV-NTP-01 | 192.168.30.4 | Time synchronisation |
+| Syslog Server | SRV-LOG-01 | 192.168.30.3 | Centralised logging |
 
 
 
@@ -128,20 +132,20 @@ cisco-enterprise-network-lab/
 
 ## Design Decisions
 
-**VLANs over Physical Separation**
+**VLANs over Physical Separation**:
 VLANs were chosen over dedicated switches per department to reflect real-world cost efficiency and scalability. A single managed switch provides the same logical traffic separation at a fraction of the 
 hardware cost.
 
-**Router-on-a-Stick**
+**Router-on-a-Stick**:
 Implemented to demonstrate subinterface and 802.1Q trunk configuration. In a production environment a Layer 3 switch using SVIs would be preferred for better performance and scalability.
 
-**Dedicated DHCP Server**
+**Dedicated DHCP Server**:
 DHCP was migrated from the router to a dedicated server in Phase 2 to eliminate a single point of failure and separate service roles following enterprise best practice.
 
-**Management VLAN 99**
+**Management VLAN 99**:
 A dedicated management VLAN was created rather than using the default VLAN 1, isolating administrative traffic and following Cisco security best practice.
 
-**Port Speed Allocation**
+**Port Speed Allocation**:
 GigabitEthernet ports were assigned to IT and Finance due to bandwidth-intensive workloads. HR and Guest were assigned FastEthernet ports as their requirements are less demanding.
 
 
