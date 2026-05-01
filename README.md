@@ -7,9 +7,8 @@ dedicated infrastructure servers and enhanced security controls.
 
 The goal was to demonstrate practical networking skills relevant to 
 real-world enterprise environments while following Cisco best practices 
-throughout.
+throughout the project.
 
----
 
 ## Technologies Used
 
@@ -24,7 +23,23 @@ throughout.
 - Syslog (Centralised Logging)
 - VLAN 99 Management Network
 
----
+## Repository Structure
+```
+cisco-enterprise-network-lab/
+├── README.md
+├── topology/
+│   ├── phase1-network.pkt
+│   ├── phase1-diagram.png
+│   ├── phase2-network.pkt
+│   └── phase2-diagram.png
+├── documentation/
+│   └── network-documentation.pdf
+└── configs/
+├── phase1-router-config.txt
+├── phase1-switch-config.txt
+├── phase2-router-config.txt
+└── phase2-switch-config.txt
+```
 
 ## Network Topology
 
@@ -34,7 +49,6 @@ throughout.
 ### Phase 2 — Expanded Network
 ![Phase 2 Topology](topology/phase2-diagram.png)
 
----
 
 ## VLAN Design
 
@@ -46,7 +60,6 @@ throughout.
 | 40 | GUEST | Guest | 192.168.40.0/24 |
 | 99 | MANAGEMENT | Network Management | 192.168.99.0/24 |
 
----
 
 ## Key Features
 
@@ -71,7 +84,7 @@ throughout.
 - Service password encryption enabled on all devices
 - All infrastructure servers placed in IT VLAN with static addressing
 
----
+
 
 ## Security Implementation
 
@@ -86,7 +99,7 @@ throughout.
 | Password Encryption | Device | service password-encryption enabled |
 | Syslog Monitoring | Monitoring | All security events logged centrally |
 
----
+
 
 ## Infrastructure Servers
 
@@ -96,27 +109,7 @@ throughout.
 | NTP Server | SRV-NTP-01 | 192.168.30.3 | Time synchronisation |
 | Syslog Server | SRV-LOG-01 | 192.168.30.4 | Centralised logging |
 
----
 
-## Repository Structure
-
-cisco-enterprise-network-lab/
-│
-├── README.md
-├── topology/
-│   ├── phase1-network.pkt
-│   ├── phase1-diagram.png
-│   ├── phase2-network.pkt
-│   └── phase2-diagram.png
-├── documentation/
-│   └── network-documentation.pdf
-└── configs/
-├── phase1-router-config.txt
-├── phase1-switch-config.txt
-├── phase2-router-config.txt
-└── phase2-switch-config.txt
-
----
 
 ## Testing and Verification
 
@@ -131,7 +124,7 @@ cisco-enterprise-network-lab/
 | Port Security | Rogue device triggers err-disabled | ✅ Pass |
 | Syslog | Security events logged on SRV-LOG-01 | ✅ Pass |
 
----
+
 
 ## Design Decisions
 
@@ -151,7 +144,7 @@ A dedicated management VLAN was created rather than using the default VLAN 1, is
 **Port Speed Allocation**
 GigabitEthernet ports were assigned to IT and Finance due to bandwidth-intensive workloads. HR and Guest were assigned FastEthernet ports as their requirements are less demanding.
 
----
+
 
 ## What I Would Do Differently
 
@@ -163,13 +156,11 @@ GigabitEthernet ports were assigned to IT and Finance due to bandwidth-intensive
 - Further restrict the Guest VLAN to internet access only
 - Use a fully featured DHCP server supporting granular lease time configuration per pool, the Guest pool would use a 4 hour lease to prevent address exhaustion
 
----
 
 ## What I Learned
 
 This project taught me the importance of planning a network design before configuration. Building the network in two phases demonstrated how a core foundation can be progressively hardened and expanded to meet enterprise requirements. I've developed a deeper understanding of how security controls work together at different layers — VLANs for segmentation, ACLs for traffic filtering, port security for physical access control, and SSH for secure management. I also gained practical experience identifying the gap between lab environments and production networks, particularly around dedicated server roles, redundancy and enterprise grade hardware.
 
----
 
 ## Requirements
 
