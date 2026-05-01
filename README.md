@@ -83,15 +83,14 @@ cisco-enterprise-network-lab/
 
 ### Phase 2
 
-- DHCP migrated to dedicated server (SRV-DHCP-01)
+- DHCP migrated to dedicated server (SRV-DHCP)
 - Router reconfigured as DHCP relay agent using ip helper-address
-- NTP server (SRV-NTP-01) deployed for network time synchronisation
-- Syslog server (SRV-LOG-01) deployed for centralised log management
+- NTP server (SRV-NTP) deployed for network time synchronisation
+- Syslog server (SRV-SYSLOG) deployed for centralised log management
 - Port security with sticky MAC configured on all active access ports
 - Unused switch ports administratively disabled
 - Service password encryption enabled on all devices
 - All infrastructure servers placed in IT VLAN with static addressing
-
 
 
 ## Security Implementation
@@ -113,9 +112,10 @@ cisco-enterprise-network-lab/
 
 | Device | Hostname | IP Address | Purpose |
 |---|---|---|---|
-| DHCP Server | SRV-DHCP-01 | 192.168.30.2 | IP address assignment |
-| NTP Server | SRV-NTP-01 | 192.168.30.4 | Time synchronisation |
-| Syslog Server | SRV-LOG-01 | 192.168.30.3 | Centralised logging |
+| DHCP Server | SRV-DHCP | 192.168.30.2 | IP address assignment |
+| Syslog Server | SRV-SYSLOG | 192.168.30.3 | Centralised logging |
+| NTP Server | SRV-NTP | 192.168.30.4 | Time synchronisation |
+
 
 
 
@@ -130,7 +130,7 @@ cisco-enterprise-network-lab/
 | SSH Access | PC-IT successfully SSH into switch | ✅ Pass |
 | SSH Blocked | Non-IT departments cannot SSH | ✅ Pass |
 | Port Security | Rogue device triggers err-disabled | ✅ Pass |
-| Syslog | Security events logged on SRV-LOG-01 | ✅ Pass |
+| Syslog | Security events logged on SRV-SYSLOG-01 | ✅ Pass |
 
 
 
