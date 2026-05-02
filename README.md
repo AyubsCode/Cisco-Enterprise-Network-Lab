@@ -40,14 +40,16 @@ cisco-enterprise-network-lab/
     ├── phase_2-network.jpg
     ├── phase_2_diagram.jpg       ← draw.io clean diagram
     └── phase_2_topology.jpg    ← actual PT screenshot
-├── documentation/
-   └── network-documentation.pdf
 └── configs/
     ├── phase1-router-config.txt
     ├── phase1-switch-config.txt
     ├── phase2-router-config.txt
     └── phase2-switch-config.txt
 ```
+
+## Network Documentation
+Link to view [documentation](https://www.notion.so/Building-a-Corporate-Network-348cfd46d5b980ce9a4cf31f8ce83f21?source=copy_link)
+
 
 ## Network Topology
 
