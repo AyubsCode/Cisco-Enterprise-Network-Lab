@@ -35,10 +35,7 @@ cisco-enterprise-network-lab/
 ├── topology/
     ├── phase_1_corporate_network.pkt
     ├── phase_2_corporate_network.pkt
-    ├── phase_1_diagram.jpg       ← draw.io clean diagram
     ├── phase_1_topology.jpg    ← actual PT screenshot
-    ├── phase_2-network.jpg
-    ├── phase_2_diagram.jpg       ← draw.io clean diagram
     └── phase_2_topology.jpg    ← actual PT screenshot
 └── configs/
     ├── phase1-router-config.txt
@@ -54,10 +51,10 @@ Link to view [documentation](https://www.notion.so/Building-a-Corporate-Network-
 ## Network Topology
 
 ### Phase 1 — Core Network
-![Phase 1 Topology](topology/phase1-diagram.png)
+![Phase 1 Topology](topology/phase_1_topology.jpg)
 
 ### Phase 2 — Expanded Network
-![Phase 2 Topology](topology/phase2-diagram.png)
+![Phase 2 Topology](topology/phase_2_topology.jpg)
 
 
 ## VLAN Design
@@ -177,4 +174,3 @@ This project taught me the importance of planning a network design before config
 - Cisco Packet Tracer 8.0 or later recommended
 - Open .pkt files directly in Packet Tracer
 
----
