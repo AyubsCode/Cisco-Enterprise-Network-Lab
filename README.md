@@ -51,10 +51,14 @@ Link to view [documentation](https://www.notion.so/Building-a-Corporate-Network-
 ## Network Topology
 
 ### Phase 1 — Core Network
-![Phase 1 Topology](topology/phase_1_topology.jpg)
+<p align="left">
+  <img src="topology/phase_1_topology.jpg" alt="Phase 1 Topology" >
+</p>
 
 ### Phase 2 — Expanded Network
-![Phase 2 Topology](topology/phase_2_topology.jpg)
+<p align="left">
+  <img src="topology/phase_2_topology.jpg" alt="Phase 2 Topology" >
+</p>
 
 
 ## VLAN Design
