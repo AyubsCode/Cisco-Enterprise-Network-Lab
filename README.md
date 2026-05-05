@@ -6,7 +6,7 @@
 
 ## Project Overview
 This project simulates a corporate network environment of a company with 
-four departments — Finance, HR, IT and Guest. The network was designed and 
+four departments — Finance, HR, IT and Customer Support. The network was designed and 
 built in two phases, starting with a core foundation and expanding to include 
 dedicated infrastructure servers and enhanced security controls.
 
@@ -68,7 +68,7 @@ Link to view [documentation](https://www.notion.so/Building-a-Corporate-Network-
 | 10 | FINANCE | Finance | 192.168.10.0/24 |
 | 20 | HR | Human Resources | 192.168.20.0/24 |
 | 30 | IT | Information Technology | 192.168.30.0/24 |
-| 40 | GUEST | Guest | 192.168.40.0/24 |
+| 40 | SUPPORT | Customer Support | 192.168.40.0/24 |
 | 99 | MANAGEMENT | Network Management | 192.168.99.0/24 |
 
 
@@ -79,7 +79,7 @@ Link to view [documentation](https://www.notion.so/Building-a-Corporate-Network-
 - Four department VLANs with full traffic segmentation
 - Router-on-a-Stick inter-VLAN routing via 802.1Q subinterfaces
 - DHCP configured on router with per-department pools
-- Extended ACL blocking Guest department from accessing IT resources
+- Extended ACL blocking Customer Support department from accessing IT resources
 - SSH v2 remote management restricted to IT department only
 - Dedicated management VLAN 99 isolating administrative traffic
 - Basic device hardening on router and switch
@@ -101,7 +101,7 @@ Link to view [documentation](https://www.notion.so/Building-a-Corporate-Network-
 | Control | Layer | Implementation |
 |---|---|---|
 | VLAN Segmentation | Layer 2 | Traffic isolation per department |
-| ACL | Layer 3 | Guest blocked from IT subnet |
+| ACL | Layer 3 | Customer Support blocked from IT subnet |
 | Port Security | Layer 2 | Sticky MAC, violation shutdown |
 | SSH v2 | Management | IT access only, Telnet disabled |
 | Management VLAN | Layer 2 | Admin traffic isolated on VLAN 99 |
@@ -129,7 +129,7 @@ Link to view [documentation](https://www.notion.so/Building-a-Corporate-Network-
 | DHCP Assignment | All PCs received correct IP per VLAN | ✅ Pass |
 | Gateway Ping | Each PC reached its default gateway | ✅ Pass |
 | Inter-VLAN Routing | Departments can communicate | ✅ Pass |
-| ACL Enforcement | Guest cannot reach IT subnet | ✅ Pass |
+| ACL Enforcement | Customer Support cannot reach IT subnet | ✅ Pass |
 | SSH Access | PC-IT successfully SSH into switch | ✅ Pass |
 | SSH Blocked | Non-IT departments cannot SSH | ✅ Pass |
 | Port Security | Rogue device triggers err-disabled | ✅ Pass |
@@ -153,7 +153,7 @@ DHCP was migrated from the router to a dedicated server in Phase 2 to eliminate 
 A dedicated management VLAN was created rather than using the default VLAN 1, isolating administrative traffic and following Cisco security best practice.
 
 **Port Speed Allocation**:
-GigabitEthernet ports were assigned to IT and Finance due to bandwidth-intensive workloads. HR and Guest were assigned FastEthernet ports as their requirements are less demanding.
+GigabitEthernet ports were assigned to IT and Finance due to bandwidth-intensive workloads. HR and Customer Support were assigned FastEthernet ports as their requirements are less demanding.
 
 
 
@@ -164,8 +164,8 @@ GigabitEthernet ports were assigned to IT and Finance due to bandwidth-intensive
 - Deploy a dedicated internal DNS server rather than using 8.8.8.8
 - Configure NTP authentication using MD5 keys to prevent NTP spoofing
 - Implement a firewall between the router and external network
-- Further restrict the Guest VLAN to internet access only
-- Use a fully featured DHCP server supporting granular lease time configuration per pool, the Guest pool would use a 4 hour lease to prevent address exhaustion
+- Further restrict the Customer Support VLAN to internet access only
+- Use a fully featured DHCP server supporting granular lease time configuration per pool, the Customer Support pool would use a 4 hour lease to prevent address exhaustion
 
 
 ## What I've Learned

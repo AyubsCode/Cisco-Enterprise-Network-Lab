@@ -1,4 +1,4 @@
-Current configuration : 2958 bytes
+Current configuration : 2960 bytes
 !
 version 12.1
 service timestamps log datetime msec
@@ -31,7 +31,7 @@ interface FastEthernet0/1
  switchport port-security mac-address sticky 000D.BDAD.20D2
 !
 interface FastEthernet0/2
- description PC-Guest
+ description PC-Support
  switchport access vlan 40
  switchport mode access
 !

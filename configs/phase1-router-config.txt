@@ -1,4 +1,4 @@
-Current configuration : 2201 bytes
+Current configuration : 2209 bytes
 !
 version 15.1
 no service timestamps log datetime msec
@@ -29,7 +29,7 @@ ip dhcp pool IT_POOL
  network 192.168.30.0 255.255.255.0
  default-router 192.168.30.1
  dns-server 8.8.8.8
-ip dhcp pool GUEST_POOL
+ip dhcp pool SUPPORT_POOL
  network 192.168.40.0 255.255.255.0
  default-router 192.168.40.1
  dns-server 8.8.8.8
@@ -83,10 +83,10 @@ interface GigabitEthernet0/0.30
  ip address 192.168.30.1 255.255.255.0
 !
 interface GigabitEthernet0/0.40
- description GUEST-Gateway
+ description SUPPORT-Gateway
  encapsulation dot1Q 40
  ip address 192.168.40.1 255.255.255.0
- ip access-group BLOCK_GUEST_FROM_IT in
+ ip access-group BLOCK_SUPPORT_FROM_IT in
 !
 interface GigabitEthernet0/0.99
  description MANAGEMENT-Gateway
@@ -116,7 +116,7 @@ ip classless
 ip flow-export version 9
 !
 !
-ip access-list extended BLOCK_GUEST_FROM_IT
+ip access-list extended BLOCK_SUPPORT_FROM_IT
  deny ip 192.168.40.0 0.0.0.255 192.168.30.0 0.0.0.255
  permit ip any any
 !

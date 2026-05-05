@@ -1,4 +1,4 @@
-Current configuration : 1788 bytes
+Current configuration : 1790 bytes
 !
 version 12.1
 no service timestamps log datetime msec
@@ -28,7 +28,7 @@ interface FastEthernet0/1
  switchport mode access
 !
 interface FastEthernet0/2
- description PC-Guest
+ description PC-Support
  switchport access vlan 40
  switchport mode access
 !
