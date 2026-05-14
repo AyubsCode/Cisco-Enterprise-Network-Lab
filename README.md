@@ -5,14 +5,30 @@
 </p>
 
 ## Project Overview
-This project simulates a corporate network environment of a company with 
-four departments — Finance, HR, IT and Customer Support. The network was designed and 
-built in two phases, starting with a core foundation and expanding to include 
-dedicated infrastructure servers and enhanced security controls.
+This project simulates a corporate network environment for a small company 
+with four departments — Finance, HR, IT and Customer Support. The network 
+was designed and built across three phases, each building on the last to 
+reflect how a real network evolves from initial deployment to a more 
+hardened and optimised infrastructure.
+
+**Phase 1**: establishes the core network foundation using VLAN segmentation, 
+Router-on-a-Stick inter-VLAN routing, DHCP and an Access Control List 
+restricting Customer Service from accessing Finance and IT resources.
+
+**Phase 2**: expands the infrastructure by migrating DHCP to a dedicated 
+server, introducing NTP for time synchronisation and Syslog for centralised 
+log management, and hardening the network with port security and 
+administrative controls.
+
+**Phase 3**: redesigns the IP addressing scheme using VLSM to allocate 
+appropriately sized subnets per department, reflecting realistic address 
+space planning for a small company rather than the wasteful /24 per VLAN 
+approach used in earlier phases.
 
 The goal was to demonstrate practical networking skills relevant to 
 real-world enterprise environments while following Cisco best practices 
-throughout the project.
+and showing how design decisions evolve as business and security 
+requirements grow.
 
 
 ## Technologies Used
@@ -35,13 +51,17 @@ cisco-enterprise-network-lab/
 ├── topology/
     ├── phase_1_corporate_network.pkt
     ├── phase_2_corporate_network.pkt
+    ├── phase_2_corporate_network.pkt(work in progress)
     ├── phase_1_topology.jpg    ← actual PT screenshot
     └── phase_2_topology.jpg    ← actual PT screenshot
+    └── phase_3_topology.jpg    ← actual PT screenshot (work in progress)
 └── configs/
     ├── phase1-router-config.txt
     ├── phase1-switch-config.txt
     ├── phase2-router-config.txt
     └── phase2-switch-config.txt
+    ├── phase3-router-config.txt (work in progress)
+    └── phase3-switch-config.txt (work in progress)
 ```
 
 ## Network Documentation
@@ -60,6 +80,8 @@ Link to view [documentation](https://www.notion.so/Building-a-Corporate-Network-
   <img src="topology/phase_2_topology.jpg" alt="Phase 2 Topology" >
 </p>
 
+### Phase 3 - Redesigned with VLSM
+The physical topology remains unchanged from Phase 2. Phase 3 redesigns the IP addressing scheme using VLSM to allocate appropriately sized subnets per department.
 
 ## VLAN Design
 
@@ -70,6 +92,17 @@ Link to view [documentation](https://www.notion.so/Building-a-Corporate-Network-
 | 30 | IT | Information Technology | 192.168.30.0/24 |
 | 40 | SUPPORT | Customer Support | 192.168.40.0/24 |
 | 99 | MANAGEMENT | Network Management | 192.168.99.0/24 |
+
+
+## IP addressing table
+
+| Department | Phase 1 & 2 Subnet | Phase 3 Subnet | Max Usable Hosts |
+|---|---|---|---|
+| Finance | 192.168.10.0/24 | 192.168.1.0/27 | 30 |
+| HR | 192.168.20.0/24 | 192.168.1.32/28 | 14 |
+| IT | 192.168.30.0/24 | 192.168.1.48/27 | 30 |
+| Customer Support | 192.168.40.0/24 | 192.168.1.80/26 | 62 |
+| Management | 192.168.99.0/24 | 192.168.1.144/29 | 6 |
 
 
 ## Key Features
@@ -95,6 +128,10 @@ Link to view [documentation](https://www.notion.so/Building-a-Corporate-Network-
 - Service password encryption enabled on all devices
 - All infrastructure servers placed in IT VLAN with static addressing
 
+### Phase 3
+
+- IP addressing redesigned using VLSM, consolidating all department subnets within 192.168.1.0/24 and sizing each subnet to reflect realistic headcount for a small company
+- All dependent configurations updated to reflect new addressing including DHCP pools, ACL wildcard masks, server static IPs and router subinterface gateways
 
 ## Security Implementation
 
