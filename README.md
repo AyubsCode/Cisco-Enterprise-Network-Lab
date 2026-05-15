@@ -51,7 +51,7 @@ cisco-enterprise-network-lab/
 ├── topology/
     ├── phase_1_corporate_network.pkt
     ├── phase_2_corporate_network.pkt
-    ├── phase_2_corporate_network.pkt(work in progress)
+    ├── phase_3_corporate_network.pkt(work in progress)
     ├── phase_1_topology.jpg    ← actual PT screenshot
     └── phase_2_topology.jpg    ← actual PT screenshot
     └── phase_3_topology.jpg    ← actual PT screenshot (work in progress)
@@ -94,17 +94,6 @@ The physical topology remains unchanged from Phase 2. Phase 3 redesigns the IP a
 | 99 | MANAGEMENT | Network Management | 192.168.99.0/24 |
 
 
-## IP addressing table
-
-| Department | Phase 1 & 2 Subnet | Phase 3 Subnet | Max Usable Hosts |
-|---|---|---|---|
-| Finance | 192.168.10.0/24 | 192.168.1.0/27 | 30 |
-| HR | 192.168.20.0/24 | 192.168.1.32/28 | 14 |
-| IT | 192.168.30.0/24 | 192.168.1.48/27 | 30 |
-| Customer Support | 192.168.40.0/24 | 192.168.1.80/26 | 62 |
-| Management | 192.168.99.0/24 | 192.168.1.144/29 | 6 |
-
-
 ## Key Features
 
 ### Phase 1
@@ -130,8 +119,16 @@ The physical topology remains unchanged from Phase 2. Phase 3 redesigns the IP a
 
 ### Phase 3
 
-- IP addressing redesigned using VLSM, consolidating all department subnets within 192.168.1.0/24 and sizing each subnet to reflect realistic headcount for a small company
+- IP addressing redesigned using VLSM, consolidating all department subnets within 192.168.1.0/24 and sizing each subnet to reflect realistic headcount for a small company (assuming the size consist of 60 employees).
 - All dependent configurations updated to reflect new addressing including DHCP pools, ACL wildcard masks, server static IPs and router subinterface gateways
+
+| Department | Phase 3 Subnet | Devices Needed | Max Usable Hosts |
+|---|---|---|---|---|
+| Finance |192.168.1.0/27 | 15 | 30 |
+| HR |192.168.1.32/27 | 15 | 30 |
+| IT |192.168.1.64/28 | 10 | 14 |
+| Customer Support| 192.168.1.80/27 | 25 | 30 |
+| Management | 192.168.1.112/30 | 1 | 2 |
 
 ## Security Implementation
 
