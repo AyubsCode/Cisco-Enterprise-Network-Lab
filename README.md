@@ -123,8 +123,8 @@ The physical topology remains unchanged from Phase 2. Phase 3 redesigns the IP a
 
 | Department | Phase 3 Subnet | Devices Needed | Max Usable Hosts |
 |---|---|---|---|---|
-|Customer Support| 192.168.1.0/27 | 25 | 30 |
-| HR |192.168.1.32/27 | 15 | 25|
+| Finance |192.168.1.0/27 | 15 | 30 |
+| HR |192.168.1.32/27 | 15 | 30 |
 | IT |192.168.1.64/28 | 10 | 14 |
 | Finance |192.168.1.97/27 | 15 | 25 | 
 
