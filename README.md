@@ -51,10 +51,9 @@ cisco-enterprise-network-lab/
 ├── topology/
     ├── phase_1_corporate_network.pkt
     ├── phase_2_corporate_network.pkt
-    ├── phase_3_corporate_network.pkt(work in progress)
+    ├── phase_3_corporate_network.pkt
     ├── phase_1_topology.jpg    ← actual PT screenshot
     └── phase_2_topology.jpg    ← actual PT screenshot
-    └── phase_3_topology.jpg    ← actual PT screenshot (work in progress)
 └── configs/
     ├── phase1-router-config.txt
     ├── phase1-switch-config.txt
@@ -124,11 +123,10 @@ The physical topology remains unchanged from Phase 2. Phase 3 redesigns the IP a
 
 | Department | Phase 3 Subnet | Devices Needed | Max Usable Hosts |
 |---|---|---|---|---|
-| Finance |192.168.1.0/27 | 15 | 30 |
-| HR |192.168.1.32/27 | 15 | 30 |
+|Customer Support| 192.168.1.0/27 | 25 | 30 |
+| HR |192.168.1.32/27 | 15 | 25|
 | IT |192.168.1.64/28 | 10 | 14 |
-| Customer Support| 192.168.1.80/27 | 25 | 30 |
-| Management | 192.168.1.112/30 | 1 | 2 |
+| Finance |192.168.1.97/27 | 15 | 25 | 
 
 ## Security Implementation
 
