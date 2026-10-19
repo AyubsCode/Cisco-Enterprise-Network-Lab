@@ -122,7 +122,7 @@ The physical topology remains unchanged from Phase 2. Phase 3 redesigns the IP a
 - All dependent configurations updated to reflect new addressing including DHCP pools, ACL wildcard masks, server static IPs and router subinterface gateways
 
 | Department | Phase 3 Subnet | Devices Needed | Max Usable Hosts |
-|---|---|---|---|---|
+|---|---|---|---|
 | Customer Support|192.168.1.0/27 | 25 | 30 |
 | HR |192.168.1.32/27 | 15 | 25 |
 | IT |192.168.1.64/28 | 15 | 16 |
